@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SideNav from "@/components/SideNav";
+import colors from "@/config/colors";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`min-h-screen w-full  text-black flex border border-red-600`}
+      >
+        {/* sidebar */}
+        {/* <p className="border">Sidebar</p> */}
+        <SideNav />
+        {/* main page */}
+        <div className={`p-8 w-full bg-[${colors.secondary}]`}>{children}</div>
+      </body>
     </html>
   );
 }

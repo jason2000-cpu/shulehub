@@ -34,3 +34,45 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Project Structure
+
+ShuleHub-dashboard/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── Sidebar.js
+│   │   ├── Dashboard/
+│   │   │   ├── DashboardOverview.js
+│   │   │   ├── TopCardMetrics.js
+│   │   │   ├── TargetsVisualization.js
+│   │   │   ├── SignupsOverview.js
+│   │   │   ├── UpcomingInvoices.js
+│   │   ├── Schools/
+│   │   │   ├── SchoolsList.js
+│   │   │   ├── SchoolDetails.js
+│   │   │   ├── Invoices.js
+│   │   │   ├── Collections.js
+│   │   ├── Common/
+│   │   │   ├── Card.js
+│   │   │   ├── BarGraph.js
+│   │   │   ├── PieChart.js
+│   │   │   ├── Modal.js
+│   ├── pages/
+│   │   ├── DashboardPage.js
+│   │   ├── SchoolsPage.js
+│   ├── App.js
+│   ├── index.js
+│   ├── api/
+│   │   ├── api.js
+│   ├── data/
+│       └── mockData.json
+│
+├── README.md
+├── package.json
+└── server/
+    └── server.js
