@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`min-h-screen w-full  text-black flex border border-red-600`}
+        className={`min-h-screen w-full  text-black flex`}
       >
         {/* sidebar */}
         {/* <p className="border">Sidebar</p> */}
