@@ -1,10 +1,10 @@
-/** @format */
+'use client'
 
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
 import Card, { CardContent, CardProps } from "@/components/Card";
-import BarChart from "@/components/BarChart";
+import PieChart from "@/components/PieChart";
 import SalesCard, { SalesProps } from "@/components/SalesCard";
 
 import { University } from 'lucide-react';
@@ -16,26 +16,30 @@ const cardData = [
   {
     label: "Total Revenue",
     amount: "$30,231.89",
-    discription: "+10.1% from last month",
-    icon: DollarSign
+    description: "+10.1% from last month",
+    icon: DollarSign,
+    name: 'revenue'
   },
   {
     label: "Signups",
     amount: "+29",
-    discription: "+50.1% from last month",
-    icon: Users
+    description: "+50.1% from last month",
+    icon: Users,
+    name: 'signups'
   },
   {
     label: "Bounced Cheques",
     amount: "+10",
-    discription: "+5% from last month",
-    icon: CreditCard
+    description: "+5% from last month",
+    icon: CreditCard,
+    name: 'cheques'
   },
   {
     label: "Collections",
     amount: "102",
-    discription: "+5 since last hour",
-    icon: Activity
+    description: "+5 since last hour",
+    icon: Activity,
+    name: 'collections'
   }
 ];
 
@@ -86,7 +90,6 @@ const schools = [
     email: "nairobiprimary@info.com",
     saleAmount: "+Ksh 39.00"
   }
-
 ]
 
 export default function Home() {
@@ -95,21 +98,14 @@ export default function Home() {
       <PageTitle title="Dashboard" />
       <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
         {cardData.map((data, index) => (
-          <Card
-            key={index}
-            amount={data.amount}
-            discription={data.discription}
-            icon={data.icon}
-            label={data.label}
-            
-          />
+          <Card key={index} data={data} />
         ))}
       </section>
       <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2">
         <CardContent>
           <p className="p-4 font-semibold">Overview</p>
 
-          <BarChart />
+          <PieChart />
         </CardContent>
         <CardContent className="flex justify-between gap-4">
           <section>

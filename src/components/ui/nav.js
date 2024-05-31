@@ -20,6 +20,7 @@ import { usePathname } from "next/navigation";
 
 export function Nav({ links, isCollapsed }) {
   const pathName = usePathname();
+  console.log(pathName)
   return (
     <TooltipProvider>
       <div
@@ -33,7 +34,7 @@ export function Nav({ links, isCollapsed }) {
                 <TooltipTrigger asChild>
                   <Link
                     href={link.href}
-                    className={`p-2 rounded  ${link.href == pathName ? `bg-[${colors.primary}] text-white` : "hover:bg-gray-200"}`}
+                    className={`p-2 rounded  ${link.href === pathName ? "bg-[#004940] text-white" : "hover:bg-gray-200"}`}
                   >
                     <link.icon className="h-4 w-4" />
                     <span className="sr-only">{link.title}</span>
@@ -55,7 +56,7 @@ export function Nav({ links, isCollapsed }) {
               <Link
                 key={index}
                 href={link.href}
-                className={`flex rounded items-center p-1 ${link.href === pathName ? `bg-[${colors.primary}] text-white` : "hover:bg-gray-200" }`}
+                className={`flex rounded items-center p-1 ${link.href === pathName ? "bg-[#004940] text-white" : "hover:bg-gray-200" }`}
               >
                 <link.icon className="mr-2 h-4 w-4" />
                 {link.title}
