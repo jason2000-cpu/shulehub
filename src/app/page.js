@@ -10,6 +10,7 @@ import SalesCard, { SalesProps } from "@/components/SalesCard";
 import { University } from 'lucide-react';
 import { BookOpenText } from 'lucide-react';
 import { School } from 'lucide-react';
+import InvoicesCard from "@/components/InvoicesCard";
 
 
 const cardData = [
@@ -109,14 +110,12 @@ export default function Home() {
         </CardContent>
         <CardContent className="flex justify-between gap-4">
           <section>
-            <p>Recent Sales</p>
+            <p className="text-xl font-semibold">Upcoming Invoices</p>
             <p className="text-sm text-gray-400">
-              You made 265 sales this month.
+              You made 20 new signups this month.
             </p>
           </section>
-          {schools.map((data, index) => (
-            <SalesCard key={index} data={data} />
-          ))}
+            <InvoicesCard />            
         </CardContent>
       </section>
     </div>

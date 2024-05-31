@@ -3,6 +3,7 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import colors from '@/config/colors';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -13,20 +14,20 @@ const Chart = ({ data, options }) => {
 
 const PieChart = () => {
   const data = {
-    labels: ['Red', 'Blue', 'Yellow'],
+    labels: ['Finance', 'Analytics', 'Timetable'],
     datasets: [
       {
-        label: '',
+        label: '20 of',
         data: [20, 60, 40],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)'
+          colors.grey,
+          'rgba(0, 73, 64, 1)',
+          'rgba(0, 73, 64, .7)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)'
+          colors.grey,
+          'rgba(0, 73, 64, 1)',
+          'rgba(0, 73, 64, .7)'
         ],
         borderWidth: 1,
       },
@@ -47,7 +48,7 @@ const PieChart = () => {
   };
 
   return (
-    <div style={{ width: '50%', height: '50%' }}>
+    <div style={{ width: '100%', height: '100%' }}>
       <Chart data={data} options={options} />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SalesCard({ data }) {
-  const {name, email, saleAmount } = data;
+  const {name, email, saleAmount, product } = data;
   return (
     <div className="  flex flex-wrap justify-between gap-3 ">
       <section className="flex justify-between gap-3 ">
@@ -16,6 +16,7 @@ export default function SalesCard({ data }) {
             </div>
         </div>
       </section>
+        <p className="text-sm">{product}</p>
         <p>{saleAmount}</p>
     </div>
   );
