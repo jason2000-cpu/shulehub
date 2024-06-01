@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { usePathname } from "next/navigation";
+import PageTitle from '@/components/PageTitle';
 
 
 function SchoolView() {
@@ -9,7 +10,10 @@ function SchoolView() {
     const splitPath = pathName.split("/")
     const schoolId = splitPath[2]
   return (
-    <div>SchoolView {schoolId}</div>
+    <div>
+      <PageTitle title={schoolId} />
+      <div></div>
+    </div>
   )
 }
 

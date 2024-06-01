@@ -1,0 +1,140 @@
+{
+  "users": [
+    {
+      "id": "64df3c064180b81adfe41d4b",
+      "firstName": "Jackson",
+      "lastName": "Mwangi",
+      "email": "jasonmwangi2000@gmail.com",
+      "views": 0,
+      "isPremium": true,
+      "createdAt": "2023-08-18T09:38:14.179Z",
+      "updatedAt": "2023-08-21T06:46:18.258Z",
+      "password": "12345"
+    },
+    {
+      "id": "64df3aec4180b81adfe41d32",
+      "firstName": "John",
+      "lastName": "Nyakundi",
+      "email": "john@gmail.com",
+      "createdAt": "2023-08-18T09:33:32.519Z",
+      "updatedAt": "2023-08-18T09:49:19.475Z",
+      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg"
+    }
+  ],
+  "schools": [
+    {
+      "id": "64df3ed06c2bd953c7b43172",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "Jamuhuri High School",
+      "type": "Secondary",
+      "product": "Zeraki Finance",
+      "profile": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
+      "email": "jamuhurischool@info.com",
+      "phone": "0797345092",
+      "balance": "10,999.00",
+      "regDate": "2023-01-01",
+      "county": "Eldoret",
+      "createdAt": "2023-08-18T09:50:08.431Z"
+    },
+    {
+      "id": "64e2fe620d7868ecff1a6a86",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "Shadrack Kimalel Pri School",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "profile": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
+      "email": "shadrackkimalel@info.com",
+      "phone": "0712955064",
+      "balance": "21,300.00",
+      "regDate": "2023-02-15",
+      "county": "Kisumu",
+      "createdAt": "2023-08-21T06:04:18.297Z"
+    },
+    {
+      "id": "64e1cdd64baffca670364c8c",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "Rose of Sharon School",
+      "type": "IGCSE",
+      "product": "Zeraki Timetable",
+      "profile": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
+      "email": "rsa@info.com",
+      "phone": "0797955092",
+      "balance": "20, 000.00",
+      "regDate": "2023-03-20",
+      "county": "Mombasa",
+      "createdAt": "2023-08-20T08:24:54.330Z"
+    },
+    {
+      "id": "64df437e4a4c0d47b536a002",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "Makini Schools",
+      "type": "IGCSE",
+      "product": "Zeraki Finance",
+      "profile":  "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874458/samples/imagecon-group.jpg",
+      "email": "makinischools@info.com",
+      "phone": "0797915867",
+      "balance": "00.00",
+      "regDate": "2023-04-10",
+      "county": "Nairobi",
+      "createdAt": "2023-08-18T10:10:06.969Z"
+    },
+    {
+      "id": "64df43714a4c0d47b5369fef",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "Nairobi Primary",
+      "type": "Primary",
+      "product": "Zeraki Analytics",
+      "profile":  "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874457/samples/ecommerce/leather-bag-gray.jpg" ,
+      "email": "nairobiprimary@info.com",
+      "phone": "0797955193",
+      "balance": "53, 000.00",
+      "regDate": "2023-05-05",
+      "county": "Nairobi",
+      "createdAt": "2023-08-18T10:09:53.009Z"
+    },
+    {
+      "id": "64df42dc4a4c0d47b5369f8a",
+      "userId": "64df3c064180b81adfe41d4b",
+      "name": "St Peter's Clavers",
+      "type": "IGCSE",
+      "product": "Zeraki Timetable",
+      "profile": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874457/samples/ecommerce/leather-bag-gray.jpg",
+      "email": "stpeterclavers@info.com",
+      "phone": "0797354967",
+      "balance": "42,500.00",
+      "regDate": "2023-06-18",
+      "county": "Nakuru",
+      "createdAt": "2023-08-18T10:07:24.023Z"
+    },
+    {
+      "id": "64df42b04a4c0d47b5369f77",
+      "userId": "64df424b4a4c0d47b5369f65",
+      "createdAt": "2023-08-18T10:06:40.339Z"
+    }
+  ],
+
+  "invoices": [
+    {
+        "id": "64df3ed06c2bd953c7b43172",
+        "schoolId": "64df42dc4a4c0d47b5369f8a",
+        "schoolName": "St Peter's Clavers",
+        "amountDue": 500,
+        "dueDate": "2024-06-15"
+    },
+    {
+        "id":"64e2fe620d7868ecff1a6a86",
+        "schoolId": "64df43714a4c0d47b5369fef",
+        "schoolName": "Nairobi Primary",
+        "amountDue": 300,
+        "dueDate": "2024-06-10"
+    },
+    {
+        "id":"64df42b04a4c0d47b5369f77",
+        "schoolId": "64df3ed06c2bd953c7b43172",
+        "schoolName": "Jamuhuri High School",
+        "amountDue": 450,
+        "dueDate": "2024-06-20"
+    }
+  ]
+  
+}
