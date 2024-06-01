@@ -7,9 +7,6 @@ import Card, { CardContent, CardProps } from "@/components/Card";
 import PieChart from "@/components/PieChart";
 import SalesCard, { SalesProps } from "@/components/SalesCard";
 
-import { University } from 'lucide-react';
-import { BookOpenText } from 'lucide-react';
-import { School } from 'lucide-react';
 import InvoicesCard from "@/components/InvoicesCard";
 
 
@@ -43,55 +40,6 @@ const cardData = [
     name: 'collections'
   }
 ];
-
-
-const schools = [
-  {
-    id: 1,
-    name: 'Jamuhuri High School',
-    type: 'Secondary',
-    product: 'Zeraki Finance',
-    profile: University,
-    email: "jamuhurischool@info.com",
-    saleAmount: "+Ksh 1,999.00"
-  },
-  {
-    id: 2,
-    name: 'Shadrack Kimalel Pri School',
-    type: 'Primary',
-    product: 'Zeraki Analytics',
-    profile: BookOpenText,
-    email: "shadrackkimalel@info.com",
-    saleAmount: "+Ksh 1,999.00"
-  },
-  {
-    id: 3,
-    name: 'Rose of Sharon School',
-    type: 'IGCSE',
-    product: 'Zeraki Timetable',
-    profile: School,
-    email: "rsa@info.com",
-    saleAmount: "+Ksh 39.00"
-  },
-  {
-    id: 4,
-    name: 'Makini Schools',
-    type: 'IGCSE',
-    product: 'Zeraki Finance',
-    profile: University,
-    email: "makinischools@info.com",
-    saleAmount: "+Ksh 299.00"
-  },
-  {
-    id: 5,
-    name: 'Nairobi Primary',
-    type: 'Primary',
-    product: 'Zeraki Analytics',
-    profile: BookOpenText,
-    email: "nairobiprimary@info.com",
-    saleAmount: "+Ksh 39.00"
-  }
-]
 
 export default function Home() {
   return (

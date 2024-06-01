@@ -9,7 +9,7 @@ const InvoiceModal = ({ selectedInvoice, isOpen, handleCloseModal }) => {
               <Dialog.Description>
                 <div className="mt-4">
                   <p><strong>School Name:</strong> {selectedInvoice.name}</p>
-                  <p><strong>Amount Due:</strong> ${selectedInvoice.amountDue}</p>
+                  <p><strong>Amount Due:</strong> Ksh. {selectedInvoice.amountDue}</p>
                   <p><strong>Due Date:</strong> {new Date(selectedInvoice.dueDate).toLocaleDateString()}</p>
                 </div>
               </Dialog.Description>

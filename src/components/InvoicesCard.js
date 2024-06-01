@@ -34,7 +34,7 @@ const columns = [
 const InvoicesCard = () => {
 
   return (
-    <InvoiceTable data={data}  />
+    <InvoiceTable data={data} columns={columns} />
      
   );
 };

@@ -7,10 +7,10 @@ import InvoiceModal from './InvoiceModal';
 function TableRow({ invoice, handleOpenModal }){
   return (
     <tr key={invoice.id}>
-      <td className="py-2 px-4 border-b">{invoice.name}</td>
-      <td className="py-2 px-4 border-b">Ksh. {invoice.amountDue}</td>
-      <td className="py-2 px-4 border-b">{new Date(invoice.dueDate).toLocaleDateString()}</td>
-      <td className="py-2 px-4 border-b">
+      <td className="py-2 px-4 border-b h-20 text-center">{invoice.name}</td>
+      <td className="py-2 px-4 border-b h-20 text-center">Ksh. {invoice.amountDue}</td>
+      <td className="py-2 px-4 border-b h-20 text-center">{new Date(invoice.dueDate).toLocaleDateString()}</td>
+      <td className="py-2 px-4 border-b h-20 text-center">
         <button
           className="bg-[#004940] text-white py-1 px-3 rounded hover:bg-[#004940d7]"
           onClick={() => handleOpenModal(invoice)}
@@ -22,9 +22,15 @@ function TableRow({ invoice, handleOpenModal }){
   )
 }
 
+export function TableHead({ header }){
+  return (
+    <th>{header}</th>
+  )
+}
 
 
-function InvoiceTable({ data }) {
+
+function InvoiceTable({ data, columns }) {
 
 const [isOpen, setIsOpen] = useState(false);
 const [selectedInvoice, setSelectedInvoice] = useState(null);
@@ -48,12 +54,9 @@ const handleCloseModal = () => {
     <div className="container">
       <div className="overflow-x-auto">
         <table className="min-w-ful w-full border rounded">
-          <thead className="">
-            <tr>
-              <th className="py-2 px-4 border-b">School Name</th>
-              <th className="py-2 px-4 border-b">Amount</th>
-              <th className="py-2 px-4 border-b">Due Date</th>
-              <th className="py-2 px-4 border-b">Actions</th>
+          <thead>
+            <tr className='text-center'>
+              {columns.map((col, index)=> <TableHead header={col.header} /> )}
             </tr>
           </thead>
           <tbody>

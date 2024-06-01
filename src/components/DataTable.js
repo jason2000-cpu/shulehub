@@ -21,7 +21,6 @@ import { Button } from "./ui/button";
 
 
 export function DataTable({ columns, data }) {
-  console.log(data, columns)
   const table = useReactTable({
     data,
     columns,
@@ -51,6 +50,7 @@ export function DataTable({ columns, data }) {
               </TableRow>
             ))}
           </TableHeader>
+          {/* <TableBody /> */}
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (

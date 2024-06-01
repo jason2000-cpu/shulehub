@@ -14,7 +14,7 @@ const Chart = ({ data, options }) => {
 
 const PieChart = () => {
   const data = {
-    labels: ['Finance', 'Analytics', 'Timetable'],
+    labels: ['Zeraki Finance', 'Zeraki Analytics', 'Zeraki Timetable'],
     datasets: [
       {
         label: '20 of',
