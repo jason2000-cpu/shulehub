@@ -31,14 +31,19 @@ function useInvoiceRest(){
         getInvoices()
     }, [])
 
+    function getInvoices(){
+        const invoices = invoices.filter(invoice => invoice.schoolId === id)
 
+        return invoices
+    }
 
 
     return {
         requestStatus,
         invoices,
         error,
-        setInvoices
+        setInvoices,
+        getInvoices
     }
 }
 

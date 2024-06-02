@@ -1,4 +1,5 @@
 import { Dialog } from '@headlessui/react';
+import { X } from 'lucide-react'
 
 const AddCollectionModal = ({ collectioniModelIsOpen, handleAddCollection, newCollection, invoices, handleCloseModal, setNewCollection}) => {
     return (
@@ -12,7 +13,7 @@ const AddCollectionModal = ({ collectioniModelIsOpen, handleAddCollection, newCo
                         className="text-gray-500"
                         onClick={handleCloseModal}
                     >
-                        X
+                        <X />
                     </button>
                 </div>
               </Dialog.Title>

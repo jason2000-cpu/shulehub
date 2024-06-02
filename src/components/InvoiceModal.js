@@ -1,11 +1,22 @@
 import { Dialog } from '@headlessui/react';
+import { X } from 'lucide-react';
 
 const InvoiceModal = ({ selectedInvoice, isOpen, handleCloseModal }) => {
     return (
         <Dialog open={isOpen} onClose={handleCloseModal} className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen">
             <div className="bg-[#F4FBFA] rounded-lg shadow-xl p-6 w-full max-w-md">
-              <Dialog.Title className="text-lg font-bold">Collect Payment</Dialog.Title>
+              <Dialog.Title className="text-lg font-bold">
+                <div className='flex justify-between  items-center'>
+                  <span>Collect Payment</span>
+                  <span
+                    className=" text-gray-500 "
+                    onClick={handleCloseModal}
+                  >
+                    <X />
+                  </span>
+                </div>
+              </Dialog.Title>
               <Dialog.Description>
                 <div className="mt-4">
                   <p><strong>School Name:</strong> {selectedInvoice.name}</p>
@@ -38,12 +49,6 @@ const InvoiceModal = ({ selectedInvoice, isOpen, handleCloseModal }) => {
                   Submit Payment
                 </button>
               </form>
-              <button
-                className="mt-4 text-gray-500 hover:text-gray-700"
-                onClick={handleCloseModal}
-              >
-                Cancel
-              </button>
             </div>
           </div>
         </Dialog>

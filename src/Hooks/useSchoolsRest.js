@@ -109,11 +109,18 @@ function useSchoolsRest(){
         getSchools()
     },[])
 
+    async function getSchool(id){
+      const school = schools.filter(school => school.id == id);
+      
+      return school
+    }
+
 
     return {
         requestStatus,
         schools,
-        error
+        error,
+        getSchool
     }
 }
 

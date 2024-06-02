@@ -1,4 +1,5 @@
 import { Dialog } from '@headlessui/react';
+import { X } from 'lucide-react';
 
 
 const NewInvoiceModal = ({setNewInvoice, newInvoice, invoiceModelIsOpen, handleCloseModal, handleCreateInvoice }) => {
@@ -13,7 +14,7 @@ const NewInvoiceModal = ({setNewInvoice, newInvoice, invoiceModelIsOpen, handleC
                         className="cursor-pointer"
                         onClick={handleCloseModal}
                     >
-                        X 
+                        <X />
                     </span>
                 </div>
               </Dialog.Title>

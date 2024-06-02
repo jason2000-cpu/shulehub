@@ -1,14 +1,15 @@
 'use client'
 
 import React, { useState, useEffect, act } from 'react';
+import { usePathname } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
-import { usePathname } from "next/navigation";
 import PageTitle from '@/components/PageTitle';
 import InvoiceTable from '@/components/InvoiceTable';
 import useInvoiceRest from '@/Hooks/useInvoicesRest';
 import { SchoolInvoiceTable } from '@/components/SchoolInvoiceTable';
 import NewInvoiceModal from '@/components/NewInvoiceModal';
 import AddCollectionModal from '@/components/AddCollectionModal';
+import useSchoolsRest from '@/Hooks/useSchoolsRest';
 
 
 const columns = [
@@ -52,7 +53,15 @@ const columns = [
   }
 ];
 const SchoolView = () => {
-  const { invoices, setInvoices } = useInvoiceRest();
+  const pathName = usePathname()
+  const { invoices, setInvoices, getInvoices } = useInvoiceRest();
+  const { getSchool } = useSchoolsRest()
+
+  const id = pathName.split("/")[2]
+  const school = getSchool(id);
+
+  console.log("SCHOOL IN VIEW:::", school)
+
   const [filter, setFilter] = useState('all');
   const [invoiceModelIsOpen, setInvoiceModalIsOpen] = useState(false);
   const [collectioniModelIsOpen, setCollectionModelIsOpen] = useState(false);
