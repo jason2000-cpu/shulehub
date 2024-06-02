@@ -7,7 +7,7 @@ import InvoiceModal from './InvoiceModal';
 function TableRow({ invoice, handleOpenModal }){
   return (
     <tr key={invoice.id}>
-      <td className="py-2 px-4 border-b h-20 text-center">{invoice.name}</td>
+      <td className="py-2 px-4 border-b h-20 text-center">{invoice.schoolName}</td>
       <td className="py-2 px-4 border-b h-20 text-center">Ksh. {invoice.amountDue}</td>
       <td className="py-2 px-4 border-b h-20 text-center">{new Date(invoice.dueDate).toLocaleDateString()}</td>
       <td className="py-2 px-4 border-b h-20 text-center">

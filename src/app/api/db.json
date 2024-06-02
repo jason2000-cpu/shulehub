@@ -118,6 +118,11 @@
         "id": "64df3ed06c2bd953c7b43172",
         "schoolId": "64df42dc4a4c0d47b5369f8a",
         "schoolName": "St Peter's Clavers",
+        "item": "Zeraki Finance",
+        "status": "pending",
+        "invoiceNo": "INV-121",
+        "created_at": "2024-06-02",
+        "amount_paid": 0,
         "amountDue": 500,
         "dueDate": "2024-06-15"
     },
@@ -125,6 +130,11 @@
         "id":"64e2fe620d7868ecff1a6a86",
         "schoolId": "64df43714a4c0d47b5369fef",
         "schoolName": "Nairobi Primary",
+        "item": "Zeraki Timetable",
+        "status": "pending",
+        "invoiceNo":"INV-122",
+        "created_at": "2024-06-05",
+        "amount_paid": 0,
         "amountDue": 300,
         "dueDate": "2024-06-10"
     },
@@ -132,6 +142,11 @@
         "id":"64df42b04a4c0d47b5369f77",
         "schoolId": "64df3ed06c2bd953c7b43172",
         "schoolName": "Jamuhuri High School",
+        "item": "Zeraki Analytics",
+        "status":"pending",
+        "invoiceNo":"INV-123",
+        "created_at":"2024-06-02",
+        "amount_paid": 0,
         "amountDue": 450,
         "dueDate": "2024-06-20"
     }

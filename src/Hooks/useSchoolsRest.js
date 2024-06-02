@@ -9,7 +9,7 @@ import { University } from 'lucide-react';
 import { BookOpenText } from 'lucide-react';
 import { School } from 'lucide-react';
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 
 
 const data= [
@@ -97,10 +97,10 @@ function useSchoolsRest(){
     useEffect(()=>{
         async function getSchools(){
             try {
-                // const result = await axios.getSchools(`${baseUrl}/schools`);
-                // setRequestStatus(REQUEST_STATUS.SUCCESS);
-                // console.log(result.data);
-                setSchools(data);
+                const result = await axios.get(`${baseUrl}/schools`);
+                setRequestStatus(REQUEST_STATUS.SUCCESS);
+                console.log(result.data);
+                setSchools(result.data);
             } catch(err){
                 setRequestStatus(REQUEST_STATUS.FAILURE);
                 setError(err);

@@ -60,7 +60,7 @@ export default function Home() {
           <section>
             <p className="text-xl font-semibold">Upcoming Invoices</p>
             <p className="text-sm text-gray-400">
-              You made 20 new signups this month.
+              You made 20 new invoices this month.
             </p>
           </section>
             <InvoicesCard />            

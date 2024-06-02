@@ -10,6 +10,7 @@ const data = [
     { id: 3, name: 'Hillside School',  item: "Zeraki Analytics", status: "pending", invoiceNo: "INV-123", created_at: '2024-06-02', amount_paid: 0, amountDue: 450, dueDate: '2024-06-20' }
   ];
 
+const baseUrl = "http://localhost:3000"
 function useInvoiceRest(){
     const [ requestStatus, setRequestStatus ] = useState(REQUEST_STATUS.LOADING);
     const [ invoices, setInvoices ] = useState([]);
@@ -18,10 +19,10 @@ function useInvoiceRest(){
     useEffect(()=>{
         async function getInvoices(){
             try {
-                // const result = await axios.get(`${baseUrl}/invoices`);
+                const result = await axios.get(`${baseUrl}/invoices`);
                 setRequestStatus(REQUEST_STATUS.SUCCESS)
-                // console.log(result.data);
-                setInvoices( data);
+                console.log(result.data);
+                setInvoices(result.data);
                 console.log(invoices)
             } catch(err){
                 setRequestStatus(REQUEST_STATUS.FAILURE);
