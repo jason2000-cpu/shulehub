@@ -144,6 +144,32 @@
       "amount_paid": 0,
       "amountDue": 450,
       "dueDate": "2024-06-20"
+    },
+    {
+      "item": "Zeraki Analytics",
+      "created_at": "2024-06-11",
+      "dueDate": "2024-06-15",
+      "amountDue": 50000,
+      "amount_paid": 0,
+      "status": "pending",
+      "invoiceItem": "Zeraki Finance",
+      "id": "f26c3ee6-8c38-4aa1-a73b-fa7ecd45d7c7",
+      "invoiceNo": "INV-1717362336336",
+      "balance": null,
+      "daysUntilDue": null
+    },
+    {
+      "item": "Zeraki Analytics",
+      "created_at": "2024-06-04",
+      "dueDate": "2024-06-22",
+      "amountDue": 50000,
+      "amount_paid": 1000,
+      "status": "pending",
+      "invoiceItem": "Zeraki Finance",
+      "id": "6e174871-d859-4707-b28b-35940bba9ff9",
+      "invoiceNo": "INV-1717362422430",
+      "balance": -1000,
+      "daysUntilDue": null
     }
   ]
 }

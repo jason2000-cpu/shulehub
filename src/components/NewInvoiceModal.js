@@ -99,7 +99,10 @@ const NewInvoiceModal = ({invoiceModelIsOpen, handleCloseModal, handleCreateInvo
                 <button 
                     type="submit" 
                     className="bg-[#004940] text-white py-2 px-4 rounded hover:bg-[#004940d7] w-full"
-                    onClick={()=> createInvoice(newInvoice)}
+                    onClick={()=> {
+                        createInvoice(newInvoice)
+                        handleCloseModal()
+                        }}
                     >
                   create Invoice
                 </button>
