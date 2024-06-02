@@ -135,6 +135,7 @@ const SchoolView = () => {
 
   return (
     <div className="p-6">
+    
       <div className='flex justify-between'>
         <PageTitle title={'Invoices'} />
         <div className='space-x-10'>

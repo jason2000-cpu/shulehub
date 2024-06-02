@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNav from "@/components/SideNav";
 import colors from "@/config/colors";
+import NavBar from "@/components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,12 @@ export default function RootLayout({ children }) {
         {/* <p className="border">Sidebar</p> */}
         <SideNav />
         {/* main page */}
-        <div className={`p-8 w-full bg-[${colors.secondary}]`}>{children}</div>
+        <div className={`w-full bg-[${colors.secondary}]`}>
+          <NavBar />
+          <div className="p-8">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
