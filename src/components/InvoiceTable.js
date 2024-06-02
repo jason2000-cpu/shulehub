@@ -35,16 +35,13 @@ function InvoiceTable({ data, columns }) {
 const [isOpen, setIsOpen] = useState(false);
 const [selectedInvoice, setSelectedInvoice] = useState(null);
 
-// Sort invoices by due date
 const sortedInvoices = data.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
-// Handle opening the modal
 const handleOpenModal = (invoice) => {
     setSelectedInvoice(invoice);
     setIsOpen(true);
 };
 
-// Handle closing the modal
 const handleCloseModal = () => {
     setSelectedInvoice(null);
     setIsOpen(false);
