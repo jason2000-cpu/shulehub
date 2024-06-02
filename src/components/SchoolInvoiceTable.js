@@ -21,8 +21,8 @@ import useInvoiceRest from "@/Hooks/useInvoicesRest";
 
 
 
-export function SchoolInvoiceTable({ columns, data, handleDeleteInvoice }) {
-    // const { invoices, setInvoices } = useInvoiceRest();
+export function SchoolInvoiceTable({ columns, data }) {
+  const { invoices, deleteInvoice } = useInvoiceRest();
   const table = useReactTable({
     data,
     columns,
@@ -72,7 +72,7 @@ export function SchoolInvoiceTable({ columns, data, handleDeleteInvoice }) {
                             <td className="py-4 px-5">{daysUntilDue}</td>
                             
                             <td className="py-2 px-4 border">
-                                <button className="bg-[#490b00] text-white py-1 px-3 rounded hover:bg-[#004940d7]" onClick={() => handleDeleteInvoice(invoice.id)}>Delete</button>
+                                <button className="bg-[#490b00] text-white py-1 px-3 rounded hover:bg-[#004940d7]" onClick={() => deleteInvoice(invoice.id)}>Delete</button>
                             
                             </td>
                         </tr>

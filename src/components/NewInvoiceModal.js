@@ -1,8 +1,21 @@
+'use client'
+
+import { useState } from 'react'
+import useInvoiceRest from '@/Hooks/useInvoicesRest';
 import { Dialog } from '@headlessui/react';
 import { X } from 'lucide-react';
 
 
-const NewInvoiceModal = ({setNewInvoice, newInvoice, invoiceModelIsOpen, handleCloseModal, handleCreateInvoice }) => {
+const NewInvoiceModal = ({invoiceModelIsOpen, handleCloseModal, handleCreateInvoice }) => {
+    const [newInvoice, setNewInvoice] = useState({
+        item: 'Zeraki Analytics',
+        created_at: '',
+        dueDate: '',
+        amountDue: 0,
+        amount_paid: 0,
+        status: 'pending'
+      });
+    const { createInvoice } = useInvoiceRest();
     return (
         <Dialog open={invoiceModelIsOpen} onClose={handleCloseModal} className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen">
@@ -14,7 +27,7 @@ const NewInvoiceModal = ({setNewInvoice, newInvoice, invoiceModelIsOpen, handleC
                         className="cursor-pointer"
                         onClick={handleCloseModal}
                     >
-                        <X />
+                         <X />
                     </span>
                 </div>
               </Dialog.Title>
@@ -86,7 +99,7 @@ const NewInvoiceModal = ({setNewInvoice, newInvoice, invoiceModelIsOpen, handleC
                 <button 
                     type="submit" 
                     className="bg-[#004940] text-white py-2 px-4 rounded hover:bg-[#004940d7] w-full"
-                    onClick={handleCreateInvoice}
+                    onClick={()=> createInvoice(newInvoice)}
                     >
                   create Invoice
                 </button>

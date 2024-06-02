@@ -54,7 +54,7 @@ const columns = [
 ];
 const SchoolView = () => {
   const pathName = usePathname()
-  const { invoices, setInvoices, getInvoices } = useInvoiceRest();
+  const { invoices, setInvoices, updateInvoice } = useInvoiceRest();
   const { getSchool } = useSchoolsRest()
 
   const id = pathName.split("/")[2]
@@ -115,13 +115,6 @@ const SchoolView = () => {
     });
   };
 
-  const handleDeleteInvoice = (id) => {
-    setInvoices(invoices.filter(invoice => invoice.id !== id));
-  };
-
-  const handleUpdateInvoice = (id, updatedInvoice) => {
-    setInvoices(invoices.map(invoice => (invoice.id === id ? updatedInvoice : invoice)));
-  };
 
   const handleAddCollection = () => {
     handleCloseModal()
@@ -135,7 +128,7 @@ const SchoolView = () => {
         balance: invoice.amount_paid - updatedPaidAmount,
         status: updatedPaidAmount >= invoice.amountDue ? 'completed' : 'pending'
       };
-      handleUpdateInvoice(invoice.id, updatedInvoice);
+      updateInvoice(invoice.id, updatedInvoice);
     }
     setNewCollection({ invoiceId: '', amountDue: 0, status: 'partial' });
   };
@@ -175,7 +168,7 @@ const SchoolView = () => {
           <option value="pending">Pending</option>
         </select>
       </div>
-      <SchoolInvoiceTable data={filteredInvoices} columns={columns} handleDeleteInvoice={handleDeleteInvoice} />
+      <SchoolInvoiceTable data={filteredInvoices} columns={columns} />
       { 
         invoiceModelIsOpen ? 
             <NewInvoiceModal 
