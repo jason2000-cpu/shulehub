@@ -34,7 +34,7 @@ function useInvoiceRest(){
             }
         }
         getInvoices()
-    }, [invoices])
+    }, [invoices.length])
 
     function getInvoices(id){
         const invoices = invoices.filter(invoice => invoice.schoolId === id)

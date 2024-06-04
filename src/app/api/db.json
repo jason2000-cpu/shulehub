@@ -5,10 +5,9 @@
       "firstName": "Jackson",
       "lastName": "Mwangi",
       "email": "jasonmwangi2000@gmail.com",
-      "views": 0,
-      "isPremium": true,
       "createdAt": "2023-08-18T09:38:14.179Z",
       "updatedAt": "2023-08-21T06:46:18.258Z",
+      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
       "password": "12345"
     },
     {
@@ -18,7 +17,8 @@
       "email": "john@gmail.com",
       "createdAt": "2023-08-18T09:33:32.519Z",
       "updatedAt": "2023-08-18T09:49:19.475Z",
-      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg"
+      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
+      "password": "12345"
     }
   ],
   "schools": [

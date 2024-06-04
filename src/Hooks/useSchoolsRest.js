@@ -109,9 +109,9 @@ function useSchoolsRest(){
         getSchools()
     },[])
 
-    async function getSchool(id){
-      const school = schools.filter(school => school.id == id);
-      
+    function getSchool(id){
+      const school = schools.find(school => school.id == id);
+      console.log("SCHOOL GOTTEN:::", school)
       return school
     }
 
