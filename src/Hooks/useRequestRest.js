@@ -5,7 +5,9 @@ import axios from 'axios';
 // import {v4 as uuidv4} from 'uuid'
 
 
-const baseUrl = "https:localhost:3001";
+// const baseUrl = "https:localhost:3001";
+
+const baseUrl = "https://shulehub-api-5yj9.vercel.app/"
 
 export const REQUEST_STATUS = {
     LOADING: "loading",

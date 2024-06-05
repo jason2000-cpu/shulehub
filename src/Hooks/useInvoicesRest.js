@@ -6,19 +6,16 @@ import { v4 as uuidv4 } from 'uuid';
 import { REQUEST_STATUS } from "./useRequestRest"
 
 
-const baseUrl = "http://localhost:3000"
+// const baseUrl = "http://localhost:3001"
+
+const baseUrl = "https://shulehub-api-5yj9.vercel.app/"
+
 function useInvoiceRest(){
     const [ requestStatus, setRequestStatus ] = useState(REQUEST_STATUS.LOADING);
     const [ invoices, setInvoices ] = useState([]);
     const [ error, setError ]  = useState("");
-    const [newInvoice, setNewInvoice] = useState({
-        item: 'Zeraki Analytics',
-        created_at: '',
-        dueDate: '',
-        amountDue: 0,
-        amount_paid: 0,
-        status: 'pending'
-      });
+
+    let originalInvoices = [...invoices]
 
     useEffect(()=>{
         async function getInvoices(){
@@ -34,12 +31,12 @@ function useInvoiceRest(){
             }
         }
         getInvoices()
-    }, [invoices.length])
+    }, [invoices])
 
     function getInvoices(id){
-        const invoices = invoices.filter(invoice => invoice.schoolId === id)
+        const schoolInvoices = invoices.filter(invoice => invoice.schoolId === id)
 
-        return invoices
+        return schoolInvoices
     }
 
     async function createInvoice(newInvoice){
@@ -50,21 +47,29 @@ function useInvoiceRest(){
             balance: newInvoice.amount - newInvoice.amount_paid,
             daysUntilDue: (new Date(newInvoice.dueDate) - new Date(newInvoice.creationDate)) / (1000 * 60 * 60 * 24)
           };
+        
+        const newInvoices = [invoice, ...invoices]
+        // console.log("NEW INVOICES ON CREATE:::", newInvoices)
 
-          try {
+        try {
+            console.log("BEFORE ADDING::::", invoices.length)
+            setInvoices(newInvoices)
+            console.log("AFTER ADDING::::", invoices.length)
             await axios.post(`${baseUrl}/invoices`, invoice)
             .then(res => {
-              console.log(res.stat)
-            })
-          } catch (err) {
+                console.log(res.stat)
+        })
+        } catch (err) {
             setRequestStatus(REQUEST_STATUS.FAILURE);
             setError(`Error While Adding Invoice ${err}`);
-          }
+            setInvoices(originalInvoices)
+        }
     }
 
     async function updateInvoice(id, updatedInvoice){
         setInvoices(invoices.map(invoice => (invoice.id === id ? updatedInvoice : invoice)));
 
+        // originalInvoices =[]
         try {
             await axios.patch(`${baseUrl}/invoices/${id}`, updatedInvoice)
             .then(res =>{

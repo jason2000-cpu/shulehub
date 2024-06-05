@@ -55,11 +55,12 @@ const columns = [
 ];
 const SchoolView = () => {
   const pathName = usePathname()
-  const { invoices, setInvoices, updateInvoice } = useInvoiceRest();
+  const { getInvoices, setInvoices, updateInvoice } = useInvoiceRest();
   const { getSchool, requestStatus, error, isLoading } = useSchoolsRest()
 
   const id = pathName.split("/")[2]
-  const school = getSchool(id)[0];
+  const school = getSchool(id);
+  const invoices = getInvoices(id)
 
   console.log("SCHOOL IN VIEW:::", school)
 
@@ -138,71 +139,69 @@ const SchoolView = () => {
 
 
   return (
-    {requestStatus == REQUEST_STATUS.SUCCESS ? (
-      <div className="px-6">
-            <div className='mb-4'>
-            <PageTitle title={`${school.name}`} />
-            </div>
-            <div className='flex justify-between'>
-              <PageTitle title={'Invoices'} />
-              <div className='space-x-10'>
-                  <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-                  onClick={()=>handleOpenModal('createInvoice')}
-                  >
-                    Create Invoice
-                  </button>
-                  <button
-                    className="bg-green-500 text-white px-4 py-2 rounded mt-4"
-                    onClick={()=> handleOpenModal('addCollection')}
-                  >
-                    Add Collection
-                  </button>
-              </div>
-            </div>
+    <div className="px-6">
+    <div className='mb-4'>
+    {isLoading ? 'LOADING....' : <PageTitle title={`${school.name} `} />}
+    </div>
+    <div className='flex justify-between'>
+      <PageTitle title={'Invoices'} />
+      <div className='space-x-10'>
+          <button
+          className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+          onClick={()=>handleOpenModal('createInvoice')}
+          >
+            Create Invoice
+          </button>
+          <button
+            className="bg-green-500 text-white px-4 py-2 rounded mt-4"
+            onClick={()=> handleOpenModal('addCollection')}
+          >
+            Add Collection
+          </button>
+      </div>
+    </div>
 
-            <div className="mb-4">
-              <label className="mr-2">Filter:</label>
-              <select
-                className="border p-2 rounded"
-                value={filter}
-                onChange={(e) => setFilter(e.target.value)}
-              >
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="pending">Pending</option>
-              </select>
-            </div>
-            <SchoolInvoiceTable data={filteredInvoices} columns={columns} />
-            { 
-              invoiceModelIsOpen ? 
-                  <NewInvoiceModal 
-                      newInvoice={newInvoice} 
-                      setNewInvoice={setNewInvoice} 
-                      handleCloseModal={handleCloseModal} 
-                      invoiceModelIsOpen={invoiceModelIsOpen} 
-                      handleCreateInvoice={handleCreateInvoice}/> 
-                : null
-            }
+    <div className="mb-4">
+      <label className="mr-2">Filter:</label>
+      <select
+        className="border p-2 rounded"
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+      >
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+    <SchoolInvoiceTable data={filteredInvoices} columns={columns} />
+    { 
+      invoiceModelIsOpen ? 
+          <NewInvoiceModal 
+              newInvoice={newInvoice} 
+              setNewInvoice={setNewInvoice} 
+              handleCloseModal={handleCloseModal} 
+              invoiceModelIsOpen={invoiceModelIsOpen} 
+              handleCreateInvoice={handleCreateInvoice}
+              school={school}
+              /> 
+        : null
+    }
 
-            {
-              collectioniModelIsOpen ? <AddCollectionModal
-                setCollectionModelIsOpen={setCollectionModelIsOpen}
-                handleCloseModal={handleCloseModal}
-                collectioniModelIsOpen={collectioniModelIsOpen}
-                handleAddCollection={handleAddCollection}
-                newCollection={newCollection}
-                setNewCollection={setNewCollection}
-                invoices={invoices}
-                /> : null
-            }
+    {
+      collectioniModelIsOpen ? <AddCollectionModal
+        setCollectionModelIsOpen={setCollectionModelIsOpen}
+        handleCloseModal={handleCloseModal}
+        collectioniModelIsOpen={collectioniModelIsOpen}
+        handleAddCollection={handleAddCollection}
+        newCollection={newCollection}
+        setNewCollection={setNewCollection}
+        invoices={invoices}
+        /> : null
+    }
 
-          </div>
-    ) : 
-    <div>LOADING!!!</div>
+  </div>
+  )
   
-  }
-  );
 };
 
 export default SchoolView;

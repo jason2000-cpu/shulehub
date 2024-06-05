@@ -6,9 +6,11 @@ import { Dialog } from '@headlessui/react';
 import { X } from 'lucide-react';
 
 
-const NewInvoiceModal = ({invoiceModelIsOpen, handleCloseModal, handleCreateInvoice }) => {
+const NewInvoiceModal = ({invoiceModelIsOpen, handleCloseModal, school }) => {
     const [newInvoice, setNewInvoice] = useState({
         item: 'Zeraki Analytics',
+        schoolName: school.name,
+        schoolId: school.id,
         created_at: '',
         dueDate: '',
         amountDue: 0,
@@ -41,7 +43,7 @@ const NewInvoiceModal = ({invoiceModelIsOpen, handleCloseModal, handleCreateInvo
                   <label htmlFor="productName" className="block text-sm font-medium text-gray-700">Product Name</label>
                   <select
                     value={newInvoice.item}
-                    onChange={(e) => setNewInvoice({...newInvoice, invoiceItem: e.target.value})}
+                    onChange={(e) => setNewInvoice({...newInvoice, item: e.target.value})}
                     id="productName"
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
