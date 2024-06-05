@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // const baseUrl = "https:localhost:3001";
 
-const baseUrl = "https://shulehub-api-5yj9.vercel.app/"
+const baseUrl = "/api/external"
 
 export const REQUEST_STATUS = {
     LOADING: "loading",

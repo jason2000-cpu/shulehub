@@ -11,7 +11,7 @@ import { School } from 'lucide-react';
 
 // const baseUrl = "http://localhost:3001";
 
-const baseUrl = "https://shulehub-api-5yj9.vercel.app/"
+const baseUrl = "/api/external"
 
 
 
